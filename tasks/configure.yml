@@ -1,6 +1,6 @@
 ---
 - name: (configure) add additional valid ssh user
-  set_fact:
+  ansible.builtin.set_fact:
     takel_ssh_AllowUsers: >-
       {{ takel_ssh_AllowUsers + ' ' +  takel_ssh_AllowUsers_additional }}
     takel_ssh_AllowGroups: >-
@@ -8,7 +8,7 @@
   when: takel_ssh_AllowUsers_additional is defined
 
 - name: (configure) copy sshd config template
-  template:
+  ansible.builtin.template:
     src: sshd_config.j2
     dest: /etc/ssh/sshd_config
   notify: restart sshd

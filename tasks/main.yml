@@ -1,20 +1,20 @@
 ---
 - name: (main) include install
-  import_tasks: install.yml
+  ansible.builtin.import_tasks: install.yml
   tags:
     - takel
     - takel_ssh
     - takel_ssh_install
 
 - name: (main) include configure
-  import_tasks: configure.yml
+  ansible.builtin.import_tasks: configure.yml
   tags:
     - takel
     - takel_ssh
     - takel_ssh_configure
 
 - name: (main) include hostkeys
-  import_tasks: hostkeys.yml
+  ansible.builtin.import_tasks: hostkeys.yml
   tags:
     - takel
     - takel_ssh
