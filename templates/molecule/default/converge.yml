@@ -2,5 +2,5 @@
 - name: default
   hosts: all
   roles:
-    - takel-users
-    - takel-ssh
+    - takel_users
+    - takel_ssh
