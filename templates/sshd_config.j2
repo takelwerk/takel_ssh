@@ -90,5 +90,9 @@ UsePAM yes
 ClientAliveInterval {{ takel_ssh_ClientAliveInterval }}
 ClientAliveCountMax {{ takel_ssh_ClientAliveCountMax }}
 
+{% if takel_ssh_AllowUsers is defined and takel_ssh_AllowUsers|length %}
 AllowUsers {{ takel_ssh_AllowUsers }}
+{% endif %}
+{% if takel_ssh_AllowGroups is defined and takel_ssh_AllowGroups|length %}
 AllowGroups {{ takel_ssh_AllowGroups }}
+{% endif %}
